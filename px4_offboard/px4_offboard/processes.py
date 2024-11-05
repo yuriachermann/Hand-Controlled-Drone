@@ -11,10 +11,14 @@ commands = [
     "MicroXRCEAgent udp4 -p 8888",
 
     # Run the PX4 SITL simulation
-    "cd ~/PX4-Autopilot && make px4_sitl gz_x500"
+    # "cd ~/PX4-Autopilot && make px4_sitl gz_x500",
+    "cd ~/PX4-Autopilot && PX4_GZ_MODEL_NAME=x500 make px4_sitl gz_x500",
+
+    # Visualize Leap Motion Hand Tracking
+    "python3 ~/ros2_px4_offboard_example_ws/src/ROS2_PX4_Offboard_Example/px4_offboard/px4_offboard/hand_visualizer.py",
 
     # Run QGroundControl
-    # "cd ~/QGroundControl && ./QGroundControl.AppImage"
+    # "cd ~/QGroundControl && ./QGroundControl.AppImage",
 ]
 
 # Loop through each command in the list
